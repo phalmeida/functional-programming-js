@@ -10,3 +10,13 @@ promise
     .then(primeiroElemento)
     .then(letraMinuscula)
     .then(console.log);
+
+function esperarPro(tempo = 2000) {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            console.log('Resolve');
+            resolve();
+        },tempo)
+    });
+}
+esperarPro().then(() => esperarPro());
